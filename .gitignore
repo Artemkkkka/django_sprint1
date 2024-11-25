@@ -1,6 +1,5 @@
 static/ 
 static-dev/
-html/
 venv/
 .vscode/
 .mypy_cache/
