@@ -1,6 +1,5 @@
-from django.shortcuts import render
 from django.http import Http404
-
+from django.shortcuts import render
 
 posts = [
     {
@@ -57,10 +56,9 @@ def index(request):
 
 
 def post_detail(request, id):
-    try:
-        post = POSTS_BY_ID[int(id)]
-    except KeyError:
+    if int(id) not in POSTS_BY_ID:
         raise Http404("Пост не найден")
+    post = POSTS_BY_ID[int(id)]
     template = "blog/detail.html"
     context = {
         "post": post,
