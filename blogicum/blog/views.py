@@ -56,7 +56,7 @@ def index(request):
 
 
 def post_detail(request, id):
-    if int(id) not in POSTS_BY_ID:
+    if id not in POSTS_BY_ID:
         raise Http404("Пост не найден")
     post = POSTS_BY_ID[int(id)]
     template = "blog/detail.html"
